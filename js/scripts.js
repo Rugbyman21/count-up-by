@@ -9,3 +9,17 @@ var countUpBy = function(countby, countto) {
   }
   return result;
 };
+
+$(document).ready(function() {
+
+  $("form#countUpBy").submit(function(event){
+
+    var countto = parseInt($("input#countto").val());
+    var countby = parseInt($("input#countby").val());
+    var result = countUpBy(countby, countto)
+
+    $(".count").text(result)
+    $("#result").show();
+    event.preventDefault();
+  });
+});
